@@ -24,6 +24,10 @@ inputs:
     description: 'The emulator profile AKA device'
     required: false
     default: 'pixel_6_pro'
+  emulator-cores:
+    description: 'Number of cores for the emulator'
+    required: false
+    default: '2'
   emulator-ram-size:
     description: 'Ram used by the emulator'
     required: false
@@ -83,6 +87,7 @@ runs:
       with:
         api-level: ${{ inputs.emulator-api }}
         profile: ${{ inputs.emulator-profile }}
+        cores: ${{ inputs.emulator-cores }}
         ram-size: ${{ inputs.emulator-ram-size }}
         heap-size: ${{ inputs.emulator-heap-size }}
         arch: ${{ inputs.emulator-arch }}
